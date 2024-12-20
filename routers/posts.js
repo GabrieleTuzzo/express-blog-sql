@@ -4,19 +4,19 @@ const checkSlug = require('../middlewares/checkSlug');
 const router = express.Router();
 
 // Middlewares
-router.param('slug', checkSlug);
+// router.param('slug', checkSlug);
 
 // CRUD requests
 router.get('/', postController.index);
 
-router.get('/:slug', postController.show);
+router.get('/:id', postController.show);
 
 router.post('/', postController.store);
 
-router.put('/:slug', postController.update);
+router.put('/:id', postController.update);
 
-router.patch('/:slug', postController.modify);
+router.patch('/:id', postController.modify);
 
-router.delete('/:slug', postController.destroy);
+router.delete('/:id', postController.destroy);
 
 module.exports = router;
